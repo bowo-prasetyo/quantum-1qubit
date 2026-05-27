@@ -28,6 +28,14 @@ const Home = {
       </div>
 
       <div class="card">
+        <h3>Quantum State</h3>
+
+        <pre>{{ prettyState }}</pre>
+
+        <p>Measurement: {{ measurement }}</p>
+      </div>
+
+      <div class="card">
         <h2>Quantum Concepts</h2>
       
         <p>
@@ -64,14 +72,6 @@ const Home = {
           <strong>Measurement</strong><br>
           Shows the latest observed classical result after measurement.
         </p>
-      </div>
-
-      <div class="card">
-        <h3>Quantum State</h3>
-
-        <pre>{{ prettyState }}</pre>
-
-        <p>Measurement: {{ measurement }}</p>
       </div>
     </div>
   `,
