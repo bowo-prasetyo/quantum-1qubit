@@ -284,7 +284,7 @@ const Manual = {
         <ol>
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
-          <li>Press Measure repeatedly</li>
+          <li>Press Measure, then back to 2 → 3 repeatedly</li>
         </ol>
       
         <p><strong>Expected Result:</strong></p>
