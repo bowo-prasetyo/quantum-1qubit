@@ -284,7 +284,7 @@ const Manual = {
         <ol>
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
-          <li>Press Measure, then repeat 2 → 3</li>
+          <li>Press Measure, then repeat 2 &rarr; 3</li>
         </ol>
       
         <p><strong>Expected Result:</strong></p>
@@ -401,7 +401,7 @@ const Manual = {
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press Pauli-Z</li>
-          <li>Press Measure, then repeat 2 → 3 → 4</li>
+          <li>Press Measure, then repeat 2 &rarr; 3 &rarr; 4</li>
         </ol>
       
         <p><strong>Expected Result:</strong></p>
