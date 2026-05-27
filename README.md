@@ -4,6 +4,8 @@ A minimal client-side quantum computer simulator built with modern browser techn
 
 The application demonstrates the fundamental behavior of a single qubit quantum computer directly inside the browser without requiring any backend server.
 
+The simulator now includes a true Bloch sphere renderer for visualizing quantum states geometrically in 3D-inspired space.
+
 ## Live Demo
 
 - Demo: https://bowo-prasetyo.github.io/quantum-1qubit/
@@ -16,6 +18,7 @@ The application demonstrates the fundamental behavior of a single qubit quantum 
 - Vue 3 CDN architecture
 - Vue Router multi-page navigation
 - Web Worker quantum computation
+- True Bloch sphere rendering
 - HTML Canvas visualization
 - IndexedDB persistence
 - GitHub Pages compatible
@@ -23,6 +26,7 @@ The application demonstrates the fundamental behavior of a single qubit quantum 
 - Educational user manual
 - Beginner-friendly quantum explanations
 - Quantum state persistence across browser refreshes
+- Real-time quantum state visualization
 
 ---
 
@@ -42,6 +46,36 @@ The simulator currently supports the common single-qubit gates:
 
 ---
 
+## Bloch Sphere Visualization
+
+The simulator visualizes the qubit using a Bloch sphere representation.
+
+The Bloch sphere provides a geometric interpretation of a single qubit state:
+
+- North pole = |0⟩
+- South pole = |1⟩
+- Surface points = quantum superpositions
+- Rotations = quantum gate operations
+
+The visualization now shows:
+
+- Quantum phase
+- Complex amplitudes
+- State vector direction
+- Gate rotations
+- Superposition geometry
+- Phase-sensitive transformations
+
+This makes phase gates such as:
+
+- Pauli-Z
+- Phase (S)
+- π/8 (T)
+
+visually observable through Bloch sphere rotations.
+
+---
+
 ## Quantum Concepts Demonstrated
 
 The simulator demonstrates:
@@ -55,6 +89,9 @@ The simulator demonstrates:
 - Complex-number amplitudes
 - Probability amplitudes
 - Quantum gate transformations
+- Bloch sphere geometry
+- Phase rotations
+- Geometric quantum state visualization
 
 ---
 
@@ -150,6 +187,31 @@ Normalization rule:
 
 ---
 
+## Bloch Sphere Mathematics
+
+A single qubit can also be represented geometrically as:
+
+```text
+|ψ⟩ = cos(θ/2)|0⟩ + e^(iφ) sin(θ/2)|1⟩
+```
+
+Where:
+
+- θ controls vertical position on the Bloch sphere
+- φ controls quantum phase rotation
+
+The simulator converts the quantum state into Bloch sphere coordinates:
+
+```text
+x = sin(θ) cos(φ)
+y = sin(θ) sin(φ)
+z = cos(θ)
+```
+
+These coordinates are projected onto the HTML Canvas renderer.
+
+---
+
 ## Architecture
 
 ### Main Thread
@@ -157,6 +219,7 @@ Normalization rule:
 Responsible for:
 
 - Vue UI rendering
+- Bloch sphere rendering
 - Canvas visualization
 - Router navigation
 - IndexedDB persistence
@@ -204,7 +267,9 @@ The included User Manual demonstrates:
 
 Possible future enhancements:
 
-- True Bloch sphere rendering
+- Animated gate transitions
+- Interactive camera rotation
+- Full 3D WebGL Bloch sphere
 - Multi-qubit simulation
 - Entanglement visualization
 - Quantum circuit editor
