@@ -1,3 +1,10 @@
+function cis(theta) {
+  return {
+    re: Math.cos(theta),
+    im: Math.sin(theta)
+  };
+}
+
 function complex(re, im) {
   return { re, im };
 }
@@ -22,19 +29,47 @@ function multiplyMatrixVector(m, v) {
 const SQRT2 = Math.sqrt(2);
 
 const gates = {
+
+  // Identity Gate
+  I: [
+    [complex(1, 0), complex(0, 0)],
+    [complex(0, 0), complex(1, 0)]
+  ],
+
+  // Pauli-X Gate
   X: [
     [complex(0, 0), complex(1, 0)],
     [complex(1, 0), complex(0, 0)]
   ],
 
+  // Pauli-Y Gate
+  Y: [
+    [complex(0, 0), complex(0, -1)],
+    [complex(0, 1), complex(0, 0)]
+  ],
+
+  // Pauli-Z Gate
   Z: [
     [complex(1, 0), complex(0, 0)],
     [complex(0, 0), complex(-1, 0)]
   ],
 
+  // Hadamard Gate
   H: [
     [complex(1 / SQRT2, 0), complex(1 / SQRT2, 0)],
     [complex(1 / SQRT2, 0), complex(-1 / SQRT2, 0)]
+  ],
+
+  // Phase Gate
+  S: [
+    [complex(1, 0), complex(0, 0)],
+    [complex(0, 0), complex(0, 1)]
+  ],
+
+  // pi/8 Gate
+  T: [
+    [complex(1, 0), complex(0, 0)],
+    [complex(0, 0), cis(Math.PI / 4)]
   ]
 };
 
