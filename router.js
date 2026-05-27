@@ -82,14 +82,14 @@ const Home = {
       this.worker.postMessage({
         type: 'gate',
         gate,
-        state: this.state
+        state: structuredClone(this.state)
       });
     },
-
+    
     measure() {
       this.worker.postMessage({
         type: 'measure',
-        state: this.state
+        state: structuredClone(this.state)
       });
     },
 
