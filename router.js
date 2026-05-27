@@ -210,46 +210,185 @@ const Home = {
     },
 
     draw() {
+    
       const canvas = this.$refs.canvas;
       const ctx = canvas.getContext('2d');
-
+    
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const centerX = 200;
-      const centerY = 200;
+    
+      const W = canvas.width;
+      const H = canvas.height;
+    
+      const cx = W / 2;
+      const cy = H / 2;
+    
       const radius = 140;
-
-      ctx.strokeStyle = 'white';
+    
+      //
+      // BACKGROUND
+      //
+    
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, W, H);
+    
+      //
+      // SPHERE
+      //
+    
+      ctx.strokeStyle = '#666';
       ctx.lineWidth = 2;
-
+    
       ctx.beginPath();
-      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
       ctx.stroke();
-
+    
+      //
+      // EQUATOR
+      //
+    
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, radius, radius * 0.35, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    
+      //
+      // Z AXIS
+      //
+    
+      ctx.strokeStyle = '#444';
+    
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - radius);
+      ctx.lineTo(cx, cy + radius);
+      ctx.stroke();
+    
+      //
+      // X AXIS
+      //
+    
+      ctx.beginPath();
+      ctx.moveTo(cx - radius, cy);
+      ctx.lineTo(cx + radius, cy);
+      ctx.stroke();
+    
+      //
+      // LABELS
+      //
+    
+      ctx.fillStyle = 'white';
+    
+      ctx.fillText('|0⟩', cx - 10, cy - radius - 10);
+      ctx.fillText('|1⟩', cx - 10, cy + radius + 20);
+    
+      ctx.fillText('X', cx + radius + 10, cy);
+      ctx.fillText('-X', cx - radius - 25, cy);
+    
+      //
+      // CURRENT QUANTUM STATE
+      //
+    
       const alpha = this.state[0];
       const beta = this.state[1];
-
-      const p0 = alpha.re * alpha.re + alpha.im * alpha.im;
-      const p1 = beta.re * beta.re + beta.im * beta.im;
-
-      const x = centerX + (p1 - p0) * radius;
-      const y = centerY;
-
-      ctx.beginPath();
-      ctx.moveTo(centerX, centerY);
-      ctx.lineTo(x, y);
+    
+      //
+      // BLOCH SPHERE COORDINATES
+      //
+    
+      const alphaMag =
+        alpha.re * alpha.re +
+        alpha.im * alpha.im;
+    
+      const betaMag =
+        beta.re * beta.re +
+        beta.im * beta.im;
+    
+      //
+      // Relative phase
+      //
+    
+      const phaseAlpha =
+        Math.atan2(alpha.im, alpha.re);
+    
+      const phaseBeta =
+        Math.atan2(beta.im, beta.re);
+    
+      const phi = phaseBeta - phaseAlpha;
+    
+      //
+      // theta
+      //
+    
+      const theta =
+        2 * Math.acos(Math.sqrt(alphaMag));
+    
+      //
+      // Bloch coordinates
+      //
+    
+      const x =
+        Math.sin(theta) * Math.cos(phi);
+    
+      const y =
+        Math.sin(theta) * Math.sin(phi);
+    
+      const z =
+        Math.cos(theta);
+    
+      //
+      // Simple 3D projection
+      //
+    
+      const screenX =
+        cx + x * radius;
+    
+      const screenY =
+        cy - z * radius;
+    
+      //
+      // DRAW VECTOR
+      //
+    
       ctx.strokeStyle = '#2f6fed';
       ctx.lineWidth = 4;
-      ctx.stroke();
-
+    
       ctx.beginPath();
-      ctx.arc(x, y, 8, 0, Math.PI * 2);
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(screenX, screenY);
+      ctx.stroke();
+    
+      //
+      // VECTOR TIP
+      //
+    
       ctx.fillStyle = '#2f6fed';
+    
+      ctx.beginPath();
+      ctx.arc(screenX, screenY, 8, 0, Math.PI * 2);
       ctx.fill();
-
-      ctx.fillStyle = 'white';
-      ctx.fillText('|0⟩', 40, 205);
-      ctx.fillText('|1⟩', 340, 205);
+    
+      //
+      // DEBUG INFO
+      //
+    
+      ctx.fillStyle = '#aaa';
+    
+      ctx.fillText(
+        `x=${x.toFixed(2)}`,
+        10,
+        20
+      );
+    
+      ctx.fillText(
+        `y=${y.toFixed(2)}`,
+        10,
+        40
+      );
+    
+      ctx.fillText(
+        `z=${z.toFixed(2)}`,
+        10,
+        60
+      );
+    
     }
   }
 };
