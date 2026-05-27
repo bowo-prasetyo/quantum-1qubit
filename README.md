@@ -6,8 +6,8 @@ The application demonstrates the fundamental behavior of a single qubit quantum 
 
 ## Live Demo
 
-- Demo: :contentReference[oaicite:0]{index=0}
-- Repository: :contentReference[oaicite:1]{index=1}
+- Demo: https://bowo-prasetyo.github.io/quantum-1qubit/
+- Repository: https://github.com/bowo-prasetyo/quantum-1qubit/
 
 ---
 
@@ -65,8 +65,8 @@ The simulator demonstrates:
 - HTML5
 - CSS3
 - JavaScript ES Modules
-- :contentReference[oaicite:2]{index=2}
-- :contentReference[oaicite:3]{index=3}
+- [Vue.js](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
 
 ### Browser APIs
 
@@ -76,7 +76,7 @@ The simulator demonstrates:
 
 ### Deployment
 
-- :contentReference[oaicite:4]{index=4}
+- [GitHub Pages](https://pages.github.com/)
 
 ---
 
@@ -133,7 +133,9 @@ GitHub Pages will automatically deploy the application.
 
 The qubit state is represented as:
 
-:contentReference[oaicite:5]{index=5}
+```text
+|ψ⟩ = α|0⟩ + β|1⟩
+```
 
 Where:
 
@@ -142,7 +144,9 @@ Where:
 
 Normalization rule:
 
-:contentReference[oaicite:6]{index=6}
+```text
+|α|² + |β|² = 1
+```
 
 ---
 
