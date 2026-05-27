@@ -401,7 +401,7 @@ const Manual = {
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press Pauli-Z</li>
-          <li>Press Measure repeatedly</li>
+          <li>Press Measure, then repeat 2 → 3 → 4</li>
         </ol>
       
         <p><strong>Expected Result:</strong></p>
