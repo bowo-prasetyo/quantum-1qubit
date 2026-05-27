@@ -10,8 +10,7 @@ const Home = {
         <h1>1 Qubit Quantum Simulator</h1>
 
         <p>
-          Minimal quantum computer simulator using Vue, Web Worker,
-          Canvas, and IndexedDB.
+          Minimal quantum computer simulator that demonstrates the basic behavior of a single quantum bit (qubit).
         </p>
       </div>
 
