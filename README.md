@@ -221,4 +221,4 @@ Possible future enhancements:
 
 ## License
 
-This project is intended for educational and experimental purposes.
+MIT License
