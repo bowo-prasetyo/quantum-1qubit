@@ -23,6 +23,45 @@ const Home = {
       </div>
 
       <div class="card">
+        <h2>Quantum Concepts</h2>
+      
+        <p>
+          <strong>Quantum State</strong><br>
+          The current mathematical state of the qubit.
+          A qubit can exist in a combination of |0⟩ and |1⟩ simultaneously.
+        </p>
+      
+        <p>
+          <strong>Hadamard (H)</strong><br>
+          Creates superposition.
+          It transforms a definite state into a 50/50 quantum mixture.
+        </p>
+      
+        <p>
+          <strong>Pauli-X</strong><br>
+          Similar to a classical NOT gate.
+          It flips |0⟩ into |1⟩ and vice versa.
+        </p>
+      
+        <p>
+          <strong>Pauli-Z</strong><br>
+          Changes the quantum phase.
+          Unlike Pauli-X, it does not flip probabilities directly.
+        </p>
+      
+        <p>
+          <strong>Measure</strong><br>
+          Observes the qubit.
+          Superposition collapses into either |0⟩ or |1⟩.
+        </p>
+      
+        <p>
+          <strong>Measurement</strong><br>
+          Shows the latest observed classical result after measurement.
+        </p>
+      </div>
+
+      <div class="card">
         <h3>Quantum State</h3>
 
         <pre>{{ prettyState }}</pre>
