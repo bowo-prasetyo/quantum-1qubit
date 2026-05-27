@@ -20,11 +20,43 @@ const Home = {
       </div>
 
       <div class="card">
-        <button @click="applyGate('H')">Hadamard (H)</button>
-        <button @click="applyGate('X')">Pauli-X</button>
-        <button @click="applyGate('Z')">Pauli-Z</button>
-        <button @click="measure">Measure</button>
-        <button @click="reset">Reset</button>
+      
+        <button @click="applyGate('I')">
+          Identity (I)
+        </button>
+      
+        <button @click="applyGate('H')">
+          Hadamard (H)
+        </button>
+      
+        <button @click="applyGate('X')">
+          Pauli-X (X)
+        </button>
+      
+        <button @click="applyGate('Y')">
+          Pauli-Y (Y)
+        </button>
+      
+        <button @click="applyGate('Z')">
+          Pauli-Z (Z)
+        </button>
+      
+        <button @click="applyGate('S')">
+          Phase (S)
+        </button>
+      
+        <button @click="applyGate('T')">
+          π/8 (T)
+        </button>
+      
+        <button @click="measure">
+          Measure
+        </button>
+      
+        <button @click="reset">
+          Reset
+        </button>
+      
       </div>
 
       <div class="card">
