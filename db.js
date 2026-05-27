@@ -19,11 +19,13 @@ function openDB() {
 export async function saveState(state) {
   const db = await openDB();
 
+  const plainState = JSON.parse(JSON.stringify(state));
+
   return new Promise((resolve, reject) => {
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
 
-    store.put(state, KEY);
+    store.put(plainState, KEY);
 
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
