@@ -336,13 +336,15 @@ const Home = {
       //
       // Simple 3D projection
       //
-    
-      const screenX =
-        cx + x * radius;
-    
-      const screenY =
-        cy - z * radius;
-    
+
+      const perspective = 0.35;
+
+const screenX =
+  cx + (x + y * perspective) * radius;
+
+const screenY =
+  cy - (z + y * perspective) * radius;
+      
       //
       // DRAW VECTOR
       //
