@@ -79,20 +79,24 @@ const Home = {
 
   methods: {
     applyGate(gate) {
+      const plainState = structuredClone(Vue.toRaw(this.state));
+    
       this.worker.postMessage({
         type: 'gate',
         gate,
-        state: structuredClone(this.state)
+        state: plainState
       });
     },
     
     measure() {
+      const plainState = structuredClone(Vue.toRaw(this.state));
+    
       this.worker.postMessage({
         type: 'measure',
-        state: structuredClone(this.state)
+        state: plainState
       });
     },
-
+        
     async reset() {
       this.state = [
         { re: 1, im: 0 },
