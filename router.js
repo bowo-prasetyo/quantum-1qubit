@@ -223,6 +223,14 @@ const Home = {
       const cy = H / 2;
     
       const radius = 140;
+      const perspective = 0.35;
+
+      function project(x, y, z) {
+        return {
+          x: cx + (x + y * perspective) * radius,
+          y: cy - (z + y * perspective) * radius
+        };
+      }
     
       //
       // BACKGROUND
@@ -255,33 +263,76 @@ const Home = {
       //
     
       ctx.strokeStyle = '#444';
-    
-      ctx.beginPath();
-      ctx.moveTo(cx, cy - radius);
-      ctx.lineTo(cx, cy + radius);
-      ctx.stroke();
+
+      {
+        const p1 = project(0, 0, 1);
+        const p2 = project(0, 0, -1);
+      
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.stroke();
+      }
+
+      //
+      // Y AXIS
+      //
+      
+      ctx.strokeStyle = '#888';
+      
+      {
+        const p1 = project(0, -1, 0);
+        const p2 = project(0, 1, 0);
+      
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.stroke();
+      }
     
       //
       // X AXIS
       //
-    
-      ctx.beginPath();
-      ctx.moveTo(cx - radius, cy);
-      ctx.lineTo(cx + radius, cy);
-      ctx.stroke();
+      {
+        const p1 = project(-1, 0, 0);
+        const p2 = project(1, 0, 0);
+      
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.stroke();
+      }
     
       //
       // LABELS
       //
-    
+      
       ctx.fillStyle = 'white';
-    
-      ctx.fillText('|0⟩', cx - 10, cy - radius - 10);
-      ctx.fillText('|1⟩', cx - 10, cy + radius + 20);
-    
-      ctx.fillText('X', cx + radius + 10, cy);
-      ctx.fillText('-X', cx - radius - 25, cy);
-    
+      
+      {
+        const p0 = project(0, 0, 1);
+        const p1 = project(0, 0, -1);
+      
+        ctx.fillText('|0⟩', p0.x - 10, p0.y - 10);
+        ctx.fillText('|1⟩', p1.x - 10, p1.y + 20);
+      }
+      
+      {
+        const px1 = project(1, 0, 0);
+        const px2 = project(-1, 0, 0);
+      
+        ctx.fillText('X', px1.x + 10, px1.y);
+        ctx.fillText('-X', px2.x - 25, px2.y);
+      }
+      
+      {
+        const py1 = project(0, 1, 0);
+        const py2 = project(0, -1, 0);
+      
+        ctx.fillText('Y', py1.x + 10, py1.y);
+        ctx.fillText('-Y', py2.x - 25, py2.y);
+      }
+            
       //
       // CURRENT QUANTUM STATE
       //
@@ -337,13 +388,10 @@ const Home = {
       // Simple 3D projection
       //
 
-      const perspective = 0.35;
-
-const screenX =
-  cx + (x + y * perspective) * radius;
-
-const screenY =
-  cy - (z + y * perspective) * radius;
+      const projected = project(x, y, z);
+      
+      const screenX = projected.x;
+      const screenY = projected.y;
       
       //
       // DRAW VECTOR
