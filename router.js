@@ -494,7 +494,7 @@ const Manual = {
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press Identity (I)</li>
-          <li>Press Measure repeatedly</li>
+          <li>Press Measure, then repeat 3 &rarr; 4</li>
         </ol>
       
         <p><strong>Expected Result:</strong></p>
@@ -569,7 +569,7 @@ const Manual = {
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press Phase (S)</li>
-          <li>Press Measure repeatedly</li>
+          <li>Press Measure, then repeat 2 &rarr; 3 &rarr; 4</li>
         </ol>
       
         <p><strong>Expected Result:</strong></p>
@@ -610,7 +610,7 @@ const Manual = {
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press π/8 (T)</li>
-          <li>Press Measure repeatedly</li>
+          <li>Press Measure, then repeat 2 &rarr; 3 &rarr; 4</li>
         </ol>
       
         <p><strong>Expected Result:</strong></p>
