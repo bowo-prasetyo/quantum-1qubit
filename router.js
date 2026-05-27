@@ -469,7 +469,160 @@ const Manual = {
       </div>
 
       <div class="card">
-        <h2>Use Case 6 — Persistence</h2>
+        <h2>Use Case 6 — Identity Operation</h2>
+      
+        <p>
+          This demonstrates a quantum operation that intentionally changes nothing.
+        </p>
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe how the Identity gate preserves the current quantum state.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          Identity operations are useful in real quantum circuits for timing,
+          synchronization, circuit design, and algorithm structure.
+        </p>
+      
+        <p><strong>Steps:</strong></p>
+      
+        <ol>
+          <li>Press Reset</li>
+          <li>Press Hadamard (H)</li>
+          <li>Press Identity (I)</li>
+          <li>Press Measure repeatedly</li>
+        </ol>
+      
+        <p><strong>Expected Result:</strong></p>
+      
+        <p>
+          The probabilities remain approximately unchanged because
+          the Identity gate does not modify the quantum state.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Use Case 7 — Complex Quantum Rotation</h2>
+      
+        <p>
+          This demonstrates quantum rotation involving imaginary-number components.
+        </p>
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe how the Pauli-Y gate combines state flipping
+          with complex quantum phase changes.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          Quantum mechanics depends heavily on complex numbers.
+          Pauli-Y introduces imaginary amplitudes that have no direct classical equivalent.
+        </p>
+      
+        <p><strong>Steps:</strong></p>
+      
+        <ol>
+          <li>Press Reset</li>
+          <li>Press Pauli-Y</li>
+          <li>Press Measure</li>
+        </ol>
+      
+        <p><strong>Expected Result:</strong></p>
+      
+        <p>
+          The measurement usually becomes 1,
+          but the internal quantum state also contains imaginary phase information.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Use Case 8 — 90 Degree Phase Shift</h2>
+      
+        <p>
+          This demonstrates controlled quantum phase modification.
+        </p>
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe how the Phase gate changes the internal phase
+          without directly changing measurement probabilities.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          Quantum algorithms rely heavily on phase relationships
+          to create constructive and destructive interference.
+        </p>
+      
+        <p><strong>Steps:</strong></p>
+      
+        <ol>
+          <li>Press Reset</li>
+          <li>Press Hadamard (H)</li>
+          <li>Press Phase (S)</li>
+          <li>Press Measure repeatedly</li>
+        </ol>
+      
+        <p><strong>Expected Result:</strong></p>
+      
+        <p>
+          Measurements remain approximately 50/50,
+          even though the internal quantum phase changes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Use Case 9 — Fine Quantum Phase Control</h2>
+      
+        <p>
+          This demonstrates precise quantum phase manipulation.
+        </p>
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe how the π/8 gate applies a smaller and more precise phase shift.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          The T gate is one of the most important gates in fault-tolerant
+          and universal quantum computing systems.
+        </p>
+      
+        <p>
+          Many advanced quantum algorithms depend on this gate.
+        </p>
+      
+        <p><strong>Steps:</strong></p>
+      
+        <ol>
+          <li>Press Reset</li>
+          <li>Press Hadamard (H)</li>
+          <li>Press π/8 (T)</li>
+          <li>Press Measure repeatedly</li>
+        </ol>
+      
+        <p><strong>Expected Result:</strong></p>
+      
+        <p>
+          Measurements remain approximately 50/50,
+          while the internal quantum phase changes subtly.
+        </p>
+      </div>
+            
+      <div class="card">
+        <h2>Use Case 10 — Persistence</h2>
 
         <p><strong>Objective:</strong></p>
 
