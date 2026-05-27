@@ -77,21 +77,45 @@ const Home = {
         </p>
       
         <p>
-          <strong>Hadamard (H)</strong><br>
+          <strong>Identity Gate (I)</strong><br>
+          Does nothing to the qubit.
+          It leaves the quantum state unchanged.
+        </p>
+      
+        <p>
+          <strong>Hadamard Gate (H)</strong><br>
           Creates superposition.
           It transforms a definite state into a 50/50 quantum mixture.
         </p>
       
         <p>
-          <strong>Pauli-X</strong><br>
+          <strong>Pauli-X Gate (X)</strong><br>
           Similar to a classical NOT gate.
           It flips |0⟩ into |1⟩ and vice versa.
         </p>
       
         <p>
-          <strong>Pauli-Z</strong><br>
+          <strong>Pauli-Y Gate (Y)</strong><br>
+          Rotates the qubit using complex quantum phase.
+          It flips the state while also introducing imaginary components.
+        </p>
+      
+        <p>
+          <strong>Pauli-Z Gate (Z)</strong><br>
           Changes the quantum phase.
           Unlike Pauli-X, it does not flip probabilities directly.
+        </p>
+      
+        <p>
+          <strong>Phase Gate (S)</strong><br>
+          Applies a 90-degree quantum phase shift.
+          It is commonly used in quantum interference operations.
+        </p>
+      
+        <p>
+          <strong>π/8 Gate (T)</strong><br>
+          Applies a smaller 45-degree quantum phase shift.
+          This gate is very important in universal quantum computing.
         </p>
       
         <p>
