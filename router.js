@@ -202,6 +202,10 @@ const Home = {
 const Manual = {
   template: `
     <div class="container">
+      <div class="card">
+        <button @click="$router.push('/')">Simulator</button>
+        <button @click="$router.push('/manual')">User Manual</button>
+      </div>
 
       <div class="card">
         <h1>User Manual</h1>
@@ -215,107 +219,201 @@ const Manual = {
           a qubit can exist in a quantum superposition of both states.
         </p>
       </div>
-
+      
       <div class="card">
         <h2>Use Case 1 — Classical Bit Flip</h2>
-
-        <p><strong>Objective:</strong></p>
-
+      
         <p>
-          Understand how a quantum gate can behave similarly to a classical NOT gate.
+          This demonstrates how some quantum operations can behave similarly
+          to ordinary classical logic gates.
         </p>
-
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Understand how the Pauli-X gate flips the qubit state,
+          similar to a classical NOT operation.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          Quantum computers still perform operations that resemble classical logic,
+          but they do so using quantum mathematics.
+        </p>
+      
         <p><strong>Steps:</strong></p>
-
+      
         <ol>
           <li>Press Reset</li>
           <li>Press Pauli-X</li>
           <li>Press Measure</li>
         </ol>
-
+      
         <p><strong>Expected Result:</strong></p>
-
+      
         <p>
-          The measurement consistently becomes 1.
+          The measurement consistently becomes 1 because
+          Pauli-X transforms |0⟩ into |1⟩.
         </p>
       </div>
-
+      
       <div class="card">
         <h2>Use Case 2 — Quantum Superposition</h2>
-
-        <p><strong>Objective:</strong></p>
-
+      
         <p>
-          Observe how a qubit can exist in multiple states simultaneously.
+          This demonstrates one of the most important ideas in quantum computing:
+          superposition.
         </p>
-
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe how a qubit can mathematically exist in both |0⟩ and |1⟩ simultaneously.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          Superposition allows quantum computers to process information
+          differently from classical computers.
+        </p>
+      
         <p><strong>Steps:</strong></p>
-
+      
         <ol>
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press Measure repeatedly</li>
         </ol>
-
+      
         <p><strong>Expected Result:</strong></p>
-
+      
         <p>
-          Measurements randomly become either 0 or 1.
+          Measurements randomly become either 0 or 1
+          with approximately equal probability.
         </p>
       </div>
 
       <div class="card">
         <h2>Use Case 3 — Quantum Collapse</h2>
-
-        <p><strong>Objective:</strong></p>
-
+      
         <p>
-          Observe quantum state collapse after measurement.
+          This demonstrates how quantum measurement changes the quantum state itself.
         </p>
-
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe wavefunction collapse after measurement.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          In quantum mechanics, observation is not passive.
+          Measuring a qubit forces it into a definite classical state.
+        </p>
+      
         <p><strong>Steps:</strong></p>
-
+      
         <ol>
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press Measure</li>
           <li>Press Measure again</li>
         </ol>
-
+      
         <p><strong>Expected Result:</strong></p>
-
+      
         <p>
-          The second measurement usually matches the first.
+          The second measurement usually matches the first because
+          the first measurement already collapsed the quantum state.
         </p>
       </div>
 
       <div class="card">
         <h2>Use Case 4 — Double Hadamard</h2>
-
-        <p><strong>Objective:</strong></p>
-
+      
         <p>
-          Observe reversible quantum operations.
+          This demonstrates reversible quantum operations.
         </p>
-
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe how applying the same quantum gate twice
+          can restore the original state.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          Many quantum operations are reversible,
+          unlike many ordinary classical processes.
+        </p>
+      
         <p><strong>Steps:</strong></p>
-
+      
         <ol>
           <li>Press Reset</li>
           <li>Press Hadamard (H)</li>
           <li>Press Hadamard (H) again</li>
           <li>Press Measure</li>
         </ol>
-
+      
         <p><strong>Expected Result:</strong></p>
-
+      
         <p>
           The qubit returns to the original |0⟩ state.
         </p>
       </div>
 
       <div class="card">
-        <h2>Use Case 5 — Persistence</h2>
+        <h2>Use Case 5 — Quantum Phase Change</h2>
+      
+        <p>
+          This demonstrates quantum phase manipulation using the Pauli-Z gate.
+        </p>
+      
+        <p><strong>Objective:</strong></p>
+      
+        <p>
+          Observe how quantum phase can change internally
+          without immediately changing measurement probabilities.
+        </p>
+      
+        <p><strong>Why This Matters:</strong></p>
+      
+        <p>
+          Quantum computation depends not only on probabilities,
+          but also on hidden phase relationships between amplitudes.
+        </p>
+      
+        <p>
+          Phase differences later influence interference effects
+          in larger quantum algorithms.
+        </p>
+      
+        <p><strong>Steps:</strong></p>
+      
+        <ol>
+          <li>Press Reset</li>
+          <li>Press Hadamard (H)</li>
+          <li>Press Pauli-Z</li>
+          <li>Press Measure repeatedly</li>
+        </ol>
+      
+        <p><strong>Expected Result:</strong></p>
+      
+        <p>
+          Measurements still appear approximately 50/50,
+          even though the internal quantum phase changed.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Use Case 6 — Persistence</h2>
 
         <p><strong>Objective:</strong></p>
 
