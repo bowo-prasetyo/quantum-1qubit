@@ -1,21 +1,105 @@
 # 1 Qubit Quantum Simulator
 
-Minimal client-side quantum computer simulator.
+A minimal client-side quantum computer simulator built with modern browser technologies.
+
+The application demonstrates the fundamental behavior of a single qubit quantum computer directly inside the browser without requiring any backend server.
+
+## Live Demo
+
+- Demo: :contentReference[oaicite:0]{index=0}
+- Repository: :contentReference[oaicite:1]{index=1}
+
+---
 
 ## Features
 
-- Vue 3 CDN
-- Vue Router CDN
+- Vue 3 CDN architecture
+- Vue Router multi-page navigation
 - Web Worker quantum computation
 - HTML Canvas visualization
 - IndexedDB persistence
 - GitHub Pages compatible
+- Client-only application
+- Educational user manual
+- Beginner-friendly quantum explanations
+- Quantum state persistence across browser refreshes
+
+---
+
+## Supported Quantum Gates
+
+The simulator currently supports the common single-qubit gates:
+
+| Gate | Name | Description |
+|---|---|---|
+| I | Identity Gate | Leaves the qubit unchanged |
+| H | Hadamard Gate | Creates quantum superposition |
+| X | Pauli-X Gate | Quantum NOT gate |
+| Y | Pauli-Y Gate | Quantum rotation using imaginary phase |
+| Z | Pauli-Z Gate | Quantum phase flip |
+| S | Phase Gate | 90° quantum phase shift |
+| T | π/8 Gate | 45° quantum phase shift |
+
+---
+
+## Quantum Concepts Demonstrated
+
+The simulator demonstrates:
+
+- Qubit state representation
+- Superposition
+- Quantum phase
+- Quantum measurement
+- Wavefunction collapse
+- Reversible quantum operations
+- Complex-number amplitudes
+- Probability amplitudes
+- Quantum gate transformations
+
+---
+
+## Technology Stack
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript ES Modules
+- :contentReference[oaicite:2]{index=2}
+- :contentReference[oaicite:3]{index=3}
+
+### Browser APIs
+
+- Web Workers
+- HTML Canvas
+- IndexedDB
+
+### Deployment
+
+- :contentReference[oaicite:4]{index=4}
+
+---
+
+## Project Structure
+
+```text
+quantum-1qubit/
+├── index.html
+├── app.js
+├── router.js
+├── worker.js
+├── db.js
+├── styles.css
+└── README.md
+```
+
+---
 
 ## Run Locally
 
-Use any static server.
+Use any static web server.
 
-Example:
+Example using Python:
 
 ```bash
 python -m http.server 8080
@@ -27,31 +111,110 @@ Then open:
 http://localhost:8080
 ```
 
+---
+
 ## Deploy To GitHub Pages
 
-1. Create GitHub repository
-2. Upload all files
-3. Push to GitHub
+1. Create a GitHub repository
+2. Upload all project files
+3. Commit and push to GitHub
 4. Open repository settings
-5. Enable GitHub Pages
-6. Deploy from `main` branch root
+5. Go to Pages
+6. Select:
+   - Branch: `main`
+   - Folder: `/root`
+7. Save settings
 
-## Quantum Gates
+GitHub Pages will automatically deploy the application.
 
-- H = Hadamard
-- X = Pauli-X
-- Z = Pauli-Z
+---
 
-## State Representation
+## Quantum State Representation
 
-Qubit state:
+The qubit state is represented as:
 
-```math
-|ψ⟩ = α|0⟩ + β|1⟩
-```
+:contentReference[oaicite:5]{index=5}
 
-Probabilities:
+Where:
 
-```math
-|α|² + |β|² = 1
-```
+- α and β are complex probability amplitudes
+- The total probability must equal 1
+
+Normalization rule:
+
+:contentReference[oaicite:6]{index=6}
+
+---
+
+## Architecture
+
+### Main Thread
+
+Responsible for:
+
+- Vue UI rendering
+- Canvas visualization
+- Router navigation
+- IndexedDB persistence
+- User interaction
+
+### Web Worker
+
+Responsible for:
+
+- Quantum gate computation
+- Matrix-vector multiplication
+- Quantum measurement
+- State collapse
+
+This separation keeps the UI responsive while performing quantum calculations.
+
+---
+
+## Persistence
+
+The simulator automatically saves the latest qubit state using IndexedDB.
+
+Refreshing the browser restores the previous quantum state automatically.
+
+---
+
+## Educational Use Cases
+
+The included User Manual demonstrates:
+
+1. Classical bit flipping
+2. Quantum superposition
+3. Quantum collapse
+4. Double Hadamard reversibility
+5. Quantum phase manipulation
+6. Identity operations
+7. Complex quantum rotation
+8. 90° phase shifting
+9. π/8 fine phase control
+10. Browser persistence
+
+---
+
+## Future Improvements
+
+Possible future enhancements:
+
+- True Bloch sphere rendering
+- Multi-qubit simulation
+- Entanglement visualization
+- Quantum circuit editor
+- Quantum Fourier Transform
+- Bell state demonstrations
+- WebGPU acceleration
+- WASM math backend
+- OPFS binary snapshots
+- Noise and decoherence simulation
+- Probability histograms
+- Quantum algorithm playground
+
+---
+
+## License
+
+This project is intended for educational and experimental purposes.
