@@ -1,10 +1,12 @@
+const menu = `<div class="card">
+        <button @click="$router.push('/')">Simulator</button>
+        <button @click="$router.push('/manual')">User Manual</button>
+        <button @click="window.open('https://bowo-prasetyo.github.io/quantum-2qubits/', '_blank')">2 Qubits</button>
+      </div>`;
 const Home = {
   template: `
     <div class="container">
-      <div class="card">
-        <button @click="$router.push('/')">Simulator</button>
-        <button @click="$router.push('/manual')">User Manual</button>
-      </div>
+      ${menu}
       
       <div class="card">
         <h1>1 Qubit Quantum Simulator</h1>
@@ -446,10 +448,7 @@ const Home = {
 const Manual = {
   template: `
     <div class="container">
-      <div class="card">
-        <button @click="$router.push('/')">Simulator</button>
-        <button @click="$router.push('/manual')">User Manual</button>
-      </div>
+      ${menu}
 
       <div class="card">
         <h1>User Manual</h1>
