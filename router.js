@@ -88,7 +88,8 @@ const Home = {
         <p>
           <strong>Hadamard Gate (H)</strong><br>
           Creates superposition.
-          It transforms a definite state into a 50/50 quantum mixture.
+          It turns a definite state such as |0⟩ into an equal superposition of |0⟩ and |1⟩,
+          so a measurement gives 0 or 1 with 50% probability each.
         </p>
       
         <p>
@@ -572,7 +573,7 @@ const Manual = {
         <p><strong>Expected Result:</strong></p>
       
         <p>
-          The second measurement usually matches the first because
+          The second measurement always matches the first because
           the first measurement already collapsed the quantum state.
         </p>
       </div>
@@ -726,7 +727,7 @@ const Manual = {
         <p><strong>Expected Result:</strong></p>
       
         <p>
-          The measurement usually becomes 1,
+          The measurement always becomes 1,
           but the internal quantum state also contains imaginary phase information.
         </p>
       </div>
